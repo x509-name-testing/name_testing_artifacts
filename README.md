@@ -55,7 +55,6 @@ In this repo, we can provide artifacts, test cases, and some additional results 
 |        forge        |  JS  |       pki.verifyCertificateChain      |                 N/A                |
 
 ## Full code coverage table
-1. NC task
    
 |  Library Task  	| Coverage 	|     Approach    	|                 	|             	|             	|             	|             	|
 |:--------------:	|:--------:	|:---------------:	|:---------------:	|:-----------:	|:-----------:	|:-----------:	|:-----------:	|
@@ -73,7 +72,6 @@ In this repo, we can provide artifacts, test cases, and some additional results 
 |                	|   Func   	|    887(8.2\%)   	|    887(8.2\%)   	|  796(7.3\%) 	|  902(8.3\%) 	|  892(8.3\%) 	|  903(8.3\%) 	|
 |                	|  Branch  	|   2745(3.0\%)   	|   2745(3.0\%)   	| 2291(2.5\%) 	| 2755(3.0\%) 	| 2711(3.0\%) 	| 2841(3.1\%) 	|
 
-2. HV-SAN task
 
 |      Library Task      	| Coverage 	|   Approach  	|             	|             	|             	|             	|
 |:----------------------:	|:--------:	|:-----------:	|:-----------:	|:-----------:	|:-----------:	|:-----------:	|
@@ -91,7 +89,6 @@ In this repo, we can provide artifacts, test cases, and some additional results 
 |                        	|   Func   	|  592(5.5\%) 	|  593(5.5\%) 	|  593(5.5\%) 	|  593(5.5\%) 	|  594(5.5\%) 	|
 |                        	|  Branch  	| 1540(1.7\%) 	| 1489(1.6\%) 	| 1530(1.7\%) 	| 1579(1.7\%) 	| 1588(1.7\%) 	|
 
-3. HV-CN task
 
 |     Library Task     	| Coverage 	|   Approach  	|             	|             	|             	|             	|
 |:--------------------:	|:--------:	|:-----------:	|:-----------:	|:-----------:	|:-----------:	|:-----------:	|
