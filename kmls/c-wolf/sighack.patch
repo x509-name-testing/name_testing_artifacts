@@ -1,0 +1,44 @@
+--- /home/xxx/klee-crt-test/c-wolf/wolfssl-5.1.1/wolfcrypt/src/asn.c	2022-01-04 00:52:51.000000000 +0800
++++ /home/xxx/klee-crt-test/c-wolf/wolfssl-5.1.1/wolfcrypt/src/asn_new.c	2023-02-20 20:31:47.881533630 +0800
+@@ -12619,9 +12619,13 @@
+         return ret;
+ 
+     /* Determine if self signed */
+-    cert->selfSigned = XMEMCMP(cert->issuerHash,
+-                               cert->subjectHash,
+-                               KEYID_SIZE) == 0 ? 1 : 0;
++    // cert->selfSigned = XMEMCMP(cert->issuerHash,
++    //                            cert->subjectHash,
++    //                            KEYID_SIZE) == 0 ? 1 : 0;
++
++    cert->selfSigned = XMEMCMP(cert->issuer,
++                               cert->subject,
++                               ASN_NAME_MAX) == 0 ? 1 : 0;
+ 
+     ret = GetCertKey(cert, cert->source, &cert->srcIdx, cert->maxIdx);
+     if (ret != 0)
+@@ -13370,7 +13374,8 @@
+     const byte* sig, word32 sigSz, word32 sigOID, byte* rsaKeyIdx)
+ {
+     int ret = 0;
+-
++    // yt: sighack here
++    return ret;
+     if (sigCtx == NULL || buf == NULL || bufSz == 0 || key == NULL ||
+         keySz == 0 || sig == NULL || sigSz == 0) {
+         return BAD_FUNC_ARG;
+@@ -18531,10 +18536,10 @@
+                                  && verify != VERIFY_OCSP) {
+                 cert->ca = GetCA(cm, cert->extSubjKeyId);
+             }
+-            if (cert->ca != NULL && XMEMCMP(cert->issuerHash,
+-                                  cert->ca->subjectNameHash, KEYID_SIZE) != 0) {
+-                cert->ca = NULL;
+-            }
++            // if (cert->ca != NULL && XMEMCMP(cert->issuerHash,
++            //                       cert->ca->subjectNameHash, KEYID_SIZE) != 0) {
++            //     cert->ca = NULL;
++            // }
+             if (cert->ca == NULL) {
+                 cert->ca = GetCAByName(cm, cert->issuerHash);
+                 /* If AKID is available then this CA doesn't have the public

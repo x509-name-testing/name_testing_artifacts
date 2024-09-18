@@ -1,0 +1,46 @@
+--- /home/xxx/klee-crt-test/wpa/wpa_supplicant-2.10/src/tls/x509v3.c	2022-01-17 04:51:29.000000000 +0800
++++ /home/xxx/klee-crt-test/wpa/wpa_supplicant-2.10/src/tls/x509v3_new.c	2023-08-14 20:29:37.289051534 +0800
+@@ -2203,14 +2203,14 @@
+ 				return -1;
+ 			}
+ 
+-			if (x509_certificate_check_signature(cert->next, cert)
+-			    < 0) {
+-				wpa_printf(MSG_DEBUG, "X509: Invalid "
+-					   "certificate signature within "
+-					   "chain");
+-				*reason = X509_VALIDATE_BAD_CERTIFICATE;
+-				return -1;
+-			}
++			// if (x509_certificate_check_signature(cert->next, cert)
++			//     < 0) {
++			// 	wpa_printf(MSG_DEBUG, "X509: Invalid "
++			// 		   "certificate signature within "
++			// 		   "chain");
++			// 	*reason = X509_VALIDATE_BAD_CERTIFICATE;
++			// 	return -1;
++			// }
+ 		}
+ 
+ 		for (trust = trusted; trust; trust = trust->next) {
+@@ -2227,13 +2227,13 @@
+ 				return -1;
+ 			}
+ 
+-			if (x509_certificate_check_signature(trust, cert) < 0)
+-			{
+-				wpa_printf(MSG_DEBUG, "X509: Invalid "
+-					   "certificate signature");
+-				*reason = X509_VALIDATE_BAD_CERTIFICATE;
+-				return -1;
+-			}
++			// if (x509_certificate_check_signature(trust, cert) < 0)
++			// {
++			// 	wpa_printf(MSG_DEBUG, "X509: Invalid "
++			// 		   "certificate signature");
++			// 	*reason = X509_VALIDATE_BAD_CERTIFICATE;
++			// 	return -1;
++			// }
+ 
+ 			wpa_printf(MSG_DEBUG, "X509: Trusted certificate "
+ 				   "found to complete the chain");

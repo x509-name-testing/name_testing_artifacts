@@ -1,0 +1,12 @@
+--- wolfssl-5.5.4-stable/wolfcrypt/src/asn.c	2022-12-21 08:15:51.000000000 +0800
++++ wolfssl-5.5.4-stable/wolfcrypt/src/asn_new.c	2023-03-02 14:42:44.529745438 +0800
+@@ -15368,7 +15368,8 @@
+ #if defined(WOLFSSL_RENESAS_TSIP_TLS) || defined(WOLFSSL_RENESAS_SCEPROTECT)
+     CertAttribute* certatt = NULL;
+ #endif
+-
++    // yt: sighack here
++    return ret;
+     if (sigCtx == NULL || buf == NULL || bufSz == 0 || key == NULL ||
+         keySz == 0 || sig == NULL || sigSz == 0) {
+         return BAD_FUNC_ARG;

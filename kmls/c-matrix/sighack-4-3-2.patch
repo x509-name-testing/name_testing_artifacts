@@ -1,0 +1,12 @@
+--- /home/xxx/c-matrix/matrixssl-4-3-0-open/crypto/keyformat/x509.c	2023-02-13 14:33:12.621585182 +0800
++++ /home/xxx/c-matrix/matrixssl-4-3-0-open/crypto/keyformat/x509_new.c	2023-02-13 14:34:13.890163401 +0800
+@@ -1388,7 +1388,8 @@
+     } /* switch certAlgorithm */
+ 
+     /* 6 empty bytes is plenty enough to know if sigHash didn't calculate */
+-    if (Memcmp(cert->sigHash, "\0\0\0\0\0\0", 6) == 0)
++    // if (Memcmp(cert->sigHash, "\0\0\0\0\0\0", 6) == 0)
++    if (0)
+     {
+         psTraceIntCrypto("No library signature alg support for cert: %d\n",
+                 cert->certAlgorithm);

@@ -1,0 +1,10 @@
+--- /home/xxx/c-bear/bearssl-0.6/src/x509/x509_minimal.c	2018-08-15 04:41:54.000000000 +0800
++++ /home/xxx/c-bear/bearssl-0.6/src/x509/x509_minimal_new.c	2023-08-01 23:55:49.573406860 +0800
+@@ -1669,6 +1669,7 @@
+ static int
+ verify_signature(br_x509_minimal_context *ctx, const br_x509_pkey *pk)
+ {
++	return 0;
+ 	int kt;
+ 
+ 	kt = ctx->cert_signer_key_type;

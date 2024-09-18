@@ -1,0 +1,21 @@
+--- /home/xxx/c-gnu/gnutls-3.7.4/lib/pubkey.c	2022-02-22 22:34:48.000000000 +0800
++++ /home/xxx/c-gnu/gnutls-3.7.4/lib/pubkey_new.c	2023-02-16 22:29:27.359699507 +0800
+@@ -2482,6 +2482,9 @@
+ 	if (ret < 0)
+ 		return gnutls_assert_val(ret);
+ 
++	// sighack
++	return 1;
++	/*
+ 	switch (se->pk) {
+ 	case GNUTLS_PK_RSA:
+ 	case GNUTLS_PK_RSA_PSS:
+@@ -2512,7 +2515,7 @@
+ 		return GNUTLS_E_INVALID_REQUEST;
+ 
+ 	}
+-
++	*/
+ 	if (_gnutls_sign_is_secure2(se, 0) == 0 && _gnutls_is_broken_sig_allowed(se, flags) == 0) {
+ 		return gnutls_assert_val(GNUTLS_E_INSUFFICIENT_SECURITY);
+ 	}

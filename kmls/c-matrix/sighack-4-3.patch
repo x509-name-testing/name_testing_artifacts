@@ -1,0 +1,11 @@
+--- matrixssl-4-3-0-open/crypto/pubkey/pubkey_verify.c	2023-02-03 16:29:33.062505047 +0800
++++ matrixssl-4-3-0-open/crypto/pubkey/pubkey_verify_new.c	2023-02-03 16:29:39.026526337 +0800
+@@ -46,6 +46,8 @@
+     psBool_t *verifyResult,
+     psVerifyOptions_t *opts)
+ {
++    *verifyResult = PS_TRUE;
++    return PS_SUCCESS;
+ # ifdef USE_RSA
+     unsigned char out[SHA512_HASH_SIZE] = { 0 };
+ # endif

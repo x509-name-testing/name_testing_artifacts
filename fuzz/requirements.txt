@@ -1,0 +1,10 @@
+asn1tools==0.166.0
+bcrypt==4.0.1
+bitstruct==8.17.0
+cffi==1.15.1
+cryptography==40.0.2
+numpy==1.24.3
+paramiko==3.1.0
+pycparser==2.21
+PyNaCl==1.5.0
+pyparsing==3.0.9

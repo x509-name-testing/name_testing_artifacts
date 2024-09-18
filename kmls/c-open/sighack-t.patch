@@ -1,0 +1,12 @@
+--- /home/xxx/klee-crt-test/c-open/openssl-1.1.1t/crypto/evp/pmeth_fn.c	2023-02-07 21:37:05.000000000 +0800
++++ /home/xxx/klee-crt-test/c-open/openssl-1.1.1t/crypto/evp/pmeth_fn_new.c	2023-04-12 13:47:55.889114033 +0800
+@@ -96,7 +96,8 @@
+         EVPerr(EVP_F_EVP_PKEY_VERIFY, EVP_R_OPERATON_NOT_INITIALIZED);
+         return -1;
+     }
+-    return ctx->pmeth->verify(ctx, sig, siglen, tbs, tbslen);
++    // return ctx->pmeth->verify(ctx, sig, siglen, tbs, tbslen);
++    return 1; // yt: sighack
+ }
+ 
+ int EVP_PKEY_verify_recover_init(EVP_PKEY_CTX *ctx)
