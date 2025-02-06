@@ -7,7 +7,6 @@ In this repo, we can provide artifacts, test cases, and some additional results 
 
 |      Impl      |  Task  | Parh explored | Accepting path |  Exec time  |
 | :------------: | :----: | :-----------: | :------------: | :---------: |
-|     axTLS      |   NC   |      508      |      184       |     22s     |
 |    BearSSL     | HV-SAN |    104766     |     12376      | 2h 16m 51s  |
 |                | HV-CN  |    115353     |     26592      | 17d 13h 45m |
 |   MatrixSSL    | HV-SAN |     1084      |       99       |   2m 55s    |
